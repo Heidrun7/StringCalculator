@@ -2,7 +2,7 @@
   "name": "hugb_tdd",
   "version": "1.0.0",
   "description": "",
-  "main": "stringcalculator.js",
+  "main": "calculator.js",
   "scripts": {
     "test": "jest",
     "watch": "jest --watchAll",
