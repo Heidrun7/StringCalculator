@@ -8,11 +8,7 @@ function add (number){
 
 		negError(numberArray); //call function to check if there are negative numbers in string
 
-		for(var i = 0; i < numberArray.length; i++){
-			if(parseInt(numberArray[i]) > 1000){
-				numberArray.splice(i, 1);
-			}
-		}
+		gt1000(numberArray); //call function to ignore numbers greater than 1000
 
 		return sum(numberArray); //if all the numbers are positive, return their sum
 	}
@@ -38,6 +34,14 @@ function negError(numberArray){
 		if(negativeArray.length > 0){ //if there are some elements in the negative array, throw error
 			throw new Error("Negatives not allowed: " + negativeArray.toString());
 		}
+}
+
+function gt1000(numberArray){
+	for(var i = 0; i < numberArray.length; i++){
+		if(parseInt(numberArray[i]) > 1000){ //if the element is larger than 1000
+			numberArray.splice(i, 1); //remove 1 element at position i
+		}
+	}
 }
 
 
