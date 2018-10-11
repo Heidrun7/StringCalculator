@@ -30,3 +30,10 @@ test("should throw error when a negative number is in string", () => {
 	}
 	expect(addError).toThrowError("Negatives not allowed: -1");
 });
+
+test("should throw error when multiple negative numbers are in string", () => {
+	function addMultiError() {
+		add("2,-4,3,-5");
+	}
+	expect(addMultiError).toThrowError("Negatives not allowed: -4,-5");
+});
