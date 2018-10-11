@@ -37,3 +37,7 @@ test("should throw error when multiple negative numbers are in string", () => {
 	}
 	expect(addMultiError).toThrowError("Negatives not allowed: -4,-5");
 });
+
+it("should ignore numbers bigger than 1000 and return sum of the other numbers", () => {
+	expect(add("1001,2")).toBe(2);
+})

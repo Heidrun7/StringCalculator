@@ -8,6 +8,12 @@ function add (number){
 
 		negError(numberArray); //call function to check if there are negative numbers in string
 
+		for(var i = 0; i < numberArray.length; i++){
+			if(parseInt(numberArray[i]) > 1000){
+				numberArray.splice(i, 1);
+			}
+		}
+
 		return sum(numberArray); //if all the numbers are positive, return their sum
 	}
 	else //if there is only 1 number in the string, return the number
@@ -25,7 +31,7 @@ function sum(numberArray){
 function negError(numberArray){
 	var negativeArray = []; //array to store the negative numbers in the string
 	for(var i = 0; i < numberArray.length; i++){
-			if(parseInt(numberArray[i]) < 0){
+		if(parseInt(numberArray[i]) < 0){
 				negativeArray.push(parseInt(numberArray[i])); //push the negative numbers into the negarray
 			}
 		}
