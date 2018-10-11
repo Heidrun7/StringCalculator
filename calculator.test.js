@@ -18,4 +18,8 @@ it("should return sum of multiple numbers", () => {
 
 it("should return sum of numbers with new lines between them", () => {
 	expect(add("1\n2,3")).toBe(6);
-})
+});
+
+it("should return sum of numbers with new lines between them", () => {
+	expect(add("1\n2,3,2\n1")).toBe(9);
+});
