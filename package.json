@@ -2,10 +2,24 @@
   "name": "hugb_tdd",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "stringcalculator.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "watch": "jest --watchAll",
+    "clean": "rm -rf node_modules",
+    "start": "node calculator.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Heidrun7/StringCalculator.git"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Heidrun7/StringCalculator/issues"
+  },
+  "homepage": "https://github.com/Heidrun7/StringCalculator#readme",
+  "devDependencies": {
+    "jest": "^23.6.0"
+  }
 }
