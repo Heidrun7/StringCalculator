@@ -23,3 +23,10 @@ it("should return sum of numbers with new lines between them", () => {
 it("should return sum of numbers with new lines between them", () => {
 	expect(add("1\n2,3,2\n1")).toBe(9);
 });
+
+test("should throw error when a negative number is in string", () => {
+	function addError() {
+		add("-1,2");
+	}
+	expect(addError).toThrowError("Negatives not allowed: -1");
+});
