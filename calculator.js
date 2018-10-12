@@ -4,13 +4,8 @@ function add (number){
 		return 0; //return 0
 
 	if(number.startsWith("//")){
-		var delimeter; //the new delimeter
-		var delimend = number.indexOf("\n"); //get the position of \n in string
-		delimeter = number.slice(2,delimend); //get the delimeter
-		var strlength = number.length; //get the length of the string
-		number = number.slice((delimend+1), strlength); //cut //[delimeter]\n off the string
-		var num = number.replace(new RegExp(delimeter, "g"), ","); //replace all instances of new delimeter with comma
-		number = num; //set the string number to num
+
+		number = changeDelimeter(number); //change number to a string with delimeter changed to comma and delimeter definition cut off
 	}
 
 	if(number.includes(",") || number.includes("\n")) //if there are 2+ numbers seperated by comma/s or new line/s
@@ -55,5 +50,14 @@ function gt1000(numberArray){
 	}
 }
 
+function changeDelimeter(number){
+		var delimeter; //the new delimeter
+		var newlpos = number.indexOf("\n"); //get the position of \n in string
+		delimeter = number.slice(2,newlpos); //get the delimeter
+		var strlength = number.length; //get the length of the string
+		number = number.slice((newlpos+1), strlength); //cut //[delimeter]\n off the string
+		var num = number.replace(new RegExp(delimeter, "g"), ","); //replace all instances of new delimeter with comma
+		return num; //return the updated string
+}
 
 module.exports = add;
