@@ -46,6 +46,10 @@ it("should allow change of delimeter and return the correct sum", () => {
 	expect(add("//;\n1;2")).toBe(3);
 });
 
-it("should allow change of delimeter", () => {
+it("should allow change of delimeter and have more than one instance of the delimeter", () => {
 	expect(add("//;\n1;2;1")).toBe(4);
+});
+
+it("should allow change of delimeter, with delimeter more than one character", () => {
+	expect(add("//!!\n1!!2!!1")).toBe(4);
 });
