@@ -2,6 +2,17 @@ function add (number){
 
 	if(number == "") //if no number is in the string
 		return 0; //return 0
+
+	if(number.startsWith("//")){
+		var delimeter; //the new delimeter
+		var delimend = number.indexOf("\n"); //get the position of \n in string
+		delimeter = number.slice(2,delimend); //get the delimeter
+		var strlength = number.length; //get the length of the string
+		number = number.slice((delimend+1), strlength); //cut //[delimeter]\n off the string
+		var num = number.replace(new RegExp(delimeter, "g"), ","); //replace all instances of new delimeter with comma
+		number = num; //set the string number to num
+	}
+
 	if(number.includes(",") || number.includes("\n")) //if there are 2+ numbers seperated by comma/s or new line/s
 	{
 		var numberArray = number.split(/[\n,]/);
