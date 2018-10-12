@@ -45,3 +45,7 @@ it("should ignore numbers bigger than 1000 and return sum of the other numbers",
 it("should allow change of delimeter and return the correct sum", () => {
 	expect(add("//;\n1;2")).toBe(3);
 });
+
+it("should allow change of delimeter", () => {
+	expect(add("//;\n1;2;1")).toBe(4);
+});
