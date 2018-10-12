@@ -1,16 +1,16 @@
-function add (number){
+function add (numbers){
 
-	if(number == "") //if no number is in the string
+	if(numbers == "") //if no number is in the string
 		return 0; //return 0
 
-	if(number.startsWith("//")){
+	if(numbers.startsWith("//")){
 
-		number = changeDelimeter(number); //change number to a string with delimeter changed to comma and delimeter definition cut off
+		numbers = changeDelimeter(numbers); //change numbers to a string with delimeter changed to comma and delimeter definition cut off
 	}
 
-	if(number.includes(",") || number.includes("\n")) //if there are 2+ numbers seperated by comma/s or new line/s
+	if(numbers.includes(",") || numbers.includes("\n")) //if there are 2+ numbers seperated by comma/s or new line/s
 	{
-		var numberArray = number.split(/[\n,]/);
+		var numberArray = numbers.split(/[\n,]/);
 
 		negError(numberArray); //call function to check if there are negative numbers in string
 
@@ -19,7 +19,7 @@ function add (number){
 		return sum(numberArray); //if all the numbers are positive, return their sum
 	}
 	else //if there is only 1 number in the string, return the number
-		return parseInt(number);
+		return parseInt(numbers);
 }
 
 function sum(numberArray){
@@ -50,13 +50,13 @@ function gt1000(numberArray){
 	}
 }
 
-function changeDelimeter(number){
+function changeDelimeter(numbers){
 		var delimeter; //the new delimeter
-		var newlpos = number.indexOf("\n"); //get the position of \n in string
-		delimeter = number.slice(2,newlpos); //get the delimeter
-		var strlength = number.length; //get the length of the string
-		number = number.slice((newlpos+1), strlength); //cut //[delimeter]\n off the string
-		var num = number.replace(new RegExp(delimeter, "g"), ","); //replace all instances of new delimeter with comma
+		var newlpos = numbers.indexOf("\n"); //get the position of \n in string
+		delimeter = numbers.slice(2,newlpos); //get the delimeter
+		var strlength = numbers.length; //get the length of the string
+		numbers = numbers.slice((newlpos+1), strlength); //cut //[delimeter]\n off the string
+		var num = numbers.replace(new RegExp(delimeter, "g"), ","); //replace all instances of new delimeter with comma
 		return num; //return the updated string
 }
 
